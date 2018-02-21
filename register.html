@@ -3,16 +3,30 @@
 <head>
   <meta name="author" content="Lauren Phan and Aditi Takle">
   <meta name="description" content="UVA Textbook Exchange">
+
 </head>
-<body>
+<body class="text-center">
+  <script>
+    function validate() {
+      var password1 = document.getElementById('password1').value;
+      var password2 = document.getElementById('password2').value;
+      if(password1 == password2) {
+        //valid password
+      } else {
+        //invalid password
+      }
+    }
+  </script>
   <h1>Register for UVA Textbook Exchange</h1>
   <form>
-    First Name: <input type="text" name="username" required /><br>
-    Last Name: <input type="text" name="username" required /><br>
-    E-mail: <input type="text" name="e-mail" required /><br>
-    Password: <input type="password" name="pwd" required /><br>
-    Confirm Password: <input type="password" name="pwd" required /><br>
-    <button type="submit" value="Register" title="Register">Register</button>
+    <table>
+      <tr><td>First Name:</td><td><input type="text" name="username" required /></td></tr>
+      <tr><td>Last Name:</td><td><input type="text" name="username" required /></td></tr>
+      <tr><td>E-mail:</td><td><input type="text" name="email" id="email" required /></td></tr>
+      <tr><td>Password:</td><td><input type="password" name="pwd" id="password1" required /></td></tr>
+      <tr><td>Confirm Password:</td><td><input type="password" name="pwd" id="password2" required /></td></tr>
+    </table>
+    <button  value="Register" title="Register" onclick="validate()">Register</button>
   </form>
 
   <a href="index.html">Return to homepage.</a>
