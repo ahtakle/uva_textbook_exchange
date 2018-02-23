@@ -5,5 +5,57 @@ body {
 }
 h1 {
   font-family:verdana;
-  font-size:200%;
+  font-size:400%;
+}
+h3 {
+  font-family:verdana;
+}
+table {
+  margin:auto;
+  width:30%;
+  margin-bottom:1%;
+  margin-top:3%;
+}
+td {
+  font-size:130%;
+  font-family:verdana;
+  padding:.05%;
+}
+input {
+  width:70%;
+}
+
+button {
+  border-radius: 4 px;
+  background-color: #4286f4;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 110%;
+  padding: .5%;
+  width: 11%;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin:2%;
+}
+button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+button:hover span {
+  padding-right: 25px;
+}
+button:hover span:after {
+  opacity:1;
+  right:0;
 }
