@@ -3,7 +3,6 @@
 <head>
   <meta name="author" content="Lauren Phan and Aditi Takle">
   <meta name="description" content="UVA Textbook Exchange">
-
 </head>
 <body class="text-center">
   <script>
@@ -20,11 +19,26 @@
   <h1>Register for UVA Textbook Exchange</h1>
   <form>
     <table>
-      <tr><td>First Name:</td><td><input type="text" name="username" required /></td></tr>
-      <tr><td>Last Name:</td><td><input type="text" name="username" required /></td></tr>
-      <tr><td>E-mail:</td><td><input type="text" name="email" id="email" required /></td></tr>
-      <tr><td>Password:</td><td><input type="password" name="pwd" id="password1" required /></td></tr>
-      <tr><td>Confirm Password:</td><td><input type="password" name="pwd" id="password2" required /></td></tr>
+      <tr>
+        <td>First Name:</td>
+        <td><input type="text" required /></td>
+      </tr>
+      <tr>
+        <td>Last Name:</td>
+        <td><input type="text" required /></td>
+      </tr>
+      <tr>
+        <td>E-mail:</td>
+        <td><input type="text" id="email" required /></td>
+      </tr>
+      <tr>
+        <td>Password:</td>
+        <td><input type="password" id="password1" required /></td>
+      </tr>
+      <tr>
+        <td>Confirm Password:</td>
+        <td><input type="password" id="password2" required /></td>
+      </tr>
     </table>
     <button  value="Register" title="Register" onclick="validate()">Register</button>
   </form>

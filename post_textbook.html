@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="author" content="Lauren Phan and Aditi Takle">
+  <meta name="description" content="UVA Textbook Exchange">
+  <link href="postbook.css" rel="stylesheet">
+</head>
+<body>
+  <navbar>
+    <p>Username</p>
+  </navbar>
+  <h1>Post a textbook for sale!</h1>
+  <form>
+    <table>
+      <tr>
+        <td>Textbook Name:</td>
+        <td><input type="text" id="name" autofocus required /></td>
+      </tr>
+      <tr>
+        <td>Author:</td>
+        <td><input type="text" id="author" required /></td>
+      </tr>
+      <tr>
+        <td>Course Name:</td>
+        <td><input type="text" id="coursename" required /></td>
+      </tr>
+      <tr>
+        <td>Professor (optional):</td>
+        <td><input type="text" id="professor" /></td>
+      </tr>
+      <tr>
+        <td>Price (optional):</td>
+        <td><input type="text" id="price" required /></td>
+      </tr>
+      <tr>
+        <td>Edition:</td>
+        <td><input type="text" id="edition" required /></td>
+      </tr>
+      <tr>
+        <td>Type:</td>
+        <td><select id="type">
+          <option value="hardcover">Hard Cover</option>
+          <option value="paperback">Paper Back</option>
+          <option value="loose-leaf">Loose-Leaf</option>
+        </select></td>
+      </tr>
+      <tr>
+        <td>Condition:</td>
+        <td><select id="condition">
+          <option value="new">New</option>
+          <option value="good">Good</option>
+          <option value="poor">Poor</option>
+        </select></td>
+      </tr>
+      <tr>
+        <td>ISBN:</td>
+        <td><input type="text" id="isbn" required /></td>
+      </tr>
+    </table>
+    <button  value="posttextbook" title="posttextbook" onclick="addTextbook()">Post Textbook</button>
+  </form>
+
+  <script type="text/javascript" src="textbook_object.js"></script>
+</body>
+</html>
