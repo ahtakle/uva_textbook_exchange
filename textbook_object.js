@@ -1,4 +1,5 @@
-function Textbook (name, author, courseName, professor, price, type, condition, edition, isbn) {
+function Textbook (name, author, courseName, professor, price, type, condition,
+  edition, isbn, image) {
   this.name = name;
   this.author = author;
   this.courseName = courseName;
@@ -8,9 +9,11 @@ function Textbook (name, author, courseName, professor, price, type, condition, 
   this.condition = condition;
   this.edition = edition;
   this.isbn = isbn;
+  this.image = image;
   this.toString = function () {
-    var str = this.name + ", " + this.author + ", " + this.courseName + ", " + this.professor + ", " +
-      this.price + ", " + this.type + ", " + this.condition + ", " + this.edition + ", " + this.isbn;
+    var str = this.name + ", " + this.author + ", " + this.courseName + ", " +
+    this.professor + ", " + this.price + ", " + this.type + ", " + this.condition +
+    ", " + this.edition + ", " + this.isbn + ", " + this.image;
     return str;
   };
 }
@@ -32,7 +35,8 @@ function addTextbook() {
     type,
     condition,
     document.getElementById("edition").value,
-    document.getElementById("isbn").value);
+    document.getElementById("isbn").value
+    document.getElementById("image").value);
 
 
 }
