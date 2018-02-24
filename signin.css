@@ -1,18 +1,25 @@
 body {
   align:center;
   text-align:center;
-  margin-top:15%;
 }
 h1 {
   font-family:verdana;
-  font-size:400%;
+  font-size:300%;
 }
 h3 {
   font-family:verdana;
 }
+a {
+  font-family:verdana;
+  display:block;
+  margin-top:2%;
+}
+p {
+  font-family:verdana;
+}
 table {
   margin:auto;
-  width:30%;
+  width:80%;
   margin-bottom:1%;
   margin-top:3%;
 }
@@ -20,11 +27,20 @@ td {
   font-size:130%;
   font-family:verdana;
   padding:.05%;
+  text-align:left;
 }
 input {
-  width:70%;
+  width:100%;
 }
-
+form {
+  width:40%;
+  display:inline-block;
+  align:center;
+  background-color:#c2c9d3;
+  opacity: 0.8;
+  border-radius:15px;
+  box-shadow:5px 5px #a6a7a8;
+}
 button {
   border-radius: 4 px;
   background-color: #4286f4;
@@ -33,10 +49,11 @@ button {
   text-align: center;
   font-size: 110%;
   padding: .5%;
-  width: 11%;
+  width: 20%;
   transition: all 0.5s;
   cursor: pointer;
   margin:2%;
+  border-radius:10px;
 }
 button span {
   cursor: pointer;
