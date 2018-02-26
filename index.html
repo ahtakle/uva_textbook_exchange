@@ -15,16 +15,20 @@
   <form class="form-signin">
     <table>
       <tr>
-        <td>Username:</td>
+        <td>
+          <div class="input-boxes">
+            <span class="input-icon"></span>
+          <input type="text" placeholder="Username" name="username" required />
+         </div>
+         </td>
       </tr>
       <tr>
-        <td> <input type="text" name="username" required /> </td>
-      </tr>
-      <tr>
-        <td>Password: </td>
-      </tr>
-      <tr>
-        <td><input type="password" name="pwd" required /></td>
+        <td>
+          <div class="input-boxes">
+            <span class="input-icon>"></span>
+              <input type="password" placeholder="Password" name="pwd" required />
+          </div>
+        </td>
       </tr>
   </table>
     <button type="submit" value="Submit" title="Login"><span>Login</span></button>
