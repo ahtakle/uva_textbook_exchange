@@ -6,64 +6,71 @@
   <link href="postbook.css" rel="stylesheet">
 </head>
 <body>
-  <nav>
-    <p>Username</p>
-  </nav>
-  <h1>Post a textbook for sale!</h1>
-  <form>
-    <table>
-      <tr>
-        <td>Textbook Name:</td>
-        <td><input type="text" id="name" autofocus required /></td>
-      </tr>
-      <tr>
-        <td>Author:</td>
-        <td><input type="text" id="author" required /></td>
-      </tr>
-      <tr>
-        <td>Course Name:</td>
-        <td><input type="text" id="coursename" required /></td>
-      </tr>
-      <tr>
-        <td>Professor (optional):</td>
-        <td><input type="text" id="professor" /></td>
-      </tr>
-      <tr>
-        <td>Price (optional):</td>
-        <td><input type="text" id="price" required /></td>
-      </tr>
-      <tr>
-        <td>Edition:</td>
-        <td><input type="text" id="edition" required /></td>
-      </tr>
-      <tr>
-        <td>Type:</td>
-        <td><select id="type">
-          <option value="hardcover">Hard Cover</option>
-          <option value="paperback">Paper Back</option>
-          <option value="loose-leaf">Loose-Leaf</option>
-        </select></td>
-      </tr>
-      <tr>
-        <td>Condition:</td>
-        <td><select id="condition">
-          <option value="new">New</option>
-          <option value="good">Good</option>
-          <option value="poor">Poor</option>
-        </select></td>
-      </tr>
-      <tr>
-        <td>ISBN:</td>
-        <td><input type="text" id="isbn" required /></td>
-      </tr>
-      <tr>
-        <td>Upload Image:</td>
-        <td><input type="file" id="image"/></td>
-      </tr>
-    </table>
-    <button value="posttextbook" title="posttextbook" onclick="addTextbook()">Post Textbook</button>
-  </form>
+  <header>
+    <nav>
+      <ul>
+        <a class="navbar">Logout</button>
+          <a class="navbar">Username</button>
+          </ul>
+        </nav>
+      </header>
+      <section>
+        <h1>Post a textbook for sale!</h1>
+        <form>
+          <table>
+            <tr>
+              <td>Textbook Name:</td>
+              <td><input type="text" id="name" autofocus required /></td>
+            </tr>
+            <tr>
+              <td>Author:</td>
+              <td><input type="text" id="author" required /></td>
+            </tr>
+            <tr>
+              <td>Course Name:</td>
+              <td><input type="text" id="coursename" required /></td>
+            </tr>
+            <tr>
+              <td>Professor (optional):</td>
+              <td><input type="text" id="professor" /></td>
+            </tr>
+            <tr>
+              <td>Price (optional):</td>
+              <td><input type="text" id="price" required /></td>
+            </tr>
+            <tr>
+              <td>Edition:</td>
+              <td><input type="text" id="edition" required /></td>
+            </tr>
+            <tr>
+              <td>Type:</td>
+              <td><select id="type">
+                <option value="hardcover">Hard Cover</option>
+                <option value="paperback">Paper Back</option>
+                <option value="loose-leaf">Loose-Leaf</option>
+              </select></td>
+            </tr>
+            <tr>
+              <td>Condition:</td>
+              <td><select id="condition">
+                <option value="new">New</option>
+                <option value="good">Good</option>
+                <option value="poor">Poor</option>
+              </select></td>
+            </tr>
+            <tr>
+              <td>ISBN:</td>
+              <td><input type="text" id="isbn" required /></td>
+            </tr>
+            <tr>
+              <td>Upload Image:</td>
+              <td><input type="file" id="image"/></td>
+            </tr>
+          </table>
+          <button class="posttextbook" type="posttextbook" value="posttextbook" title="Login" onclick="addTextbook()"><span>Post Textbook</span></button>
+        </form>
+      </section>
 
-  <script type="text/javascript" src="textbook_object.js"></script>
-</body>
-</html>
+      <script type="text/javascript" src="textbook_object.js"></script>
+    </body>
+    </html>
