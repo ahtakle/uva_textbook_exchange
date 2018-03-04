@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--post_textbook.html: consists of a simple form to collect textbook information-->
 <html>
 <head>
   <meta name="author" content="Lauren Phan and Aditi Takle">
@@ -6,14 +7,25 @@
   <link href="postbook.css" rel="stylesheet">
 </head>
 <body>
+
+  <!--navbar with logout, user options-->
   <header>
     <nav>
       <ul>
-        <a class="navbar">Logout</button>
-          <a class="navbar">Username</button>
-          </ul>
-        </nav>
-      </header>
+        <a class="navbar" id="logout" href="index.html"><img src="logout.png"></a></button>
+        <!--<div class="dropdown-menu">-->
+        <a class="navbar" id="user"><img src="user.png"></a></button>
+          <!--<div id="dropdown" class="dropdown-links">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>-
+        </div>-->
+        </ul>
+      </nav>
+    </header>
+
+      <!--Form w/ textbook details-->
       <section>
         <h1>Post a textbook for sale!</h1>
         <form>
@@ -54,7 +66,8 @@
               <td>Condition:</td>
               <td><select id="condition">
                 <option value="new">New</option>
-                <option value="good">Good</option>
+                <option value ="excellent">Excellent</option>
+                <option value="fair">Fair</option>
                 <option value="poor">Poor</option>
               </select></td>
             </tr>
@@ -72,5 +85,22 @@
       </section>
 
       <script type="text/javascript" src="textbook_object.js"></script>
+      <!--scsript to show dropdown menu-->
+      <!-- to implement later
+      <script type="text/javscript">
+        document.getElementById("dropdown").classList.toggle("show");
+        window.onclick = function(event) {
+          if (!event.target.matches(#user)) {
+            var dropdowns = document.getElementsByClassName("dropwdown-links");
+            var i = for (i = 0: i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+          }
+        }
+      }
+    -->
+      </script>
     </body>
     </html>
