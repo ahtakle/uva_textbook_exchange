@@ -21,9 +21,8 @@
             <a href="#">Link 3</a>
           </div>-
         </div>-->
-        <?php
-          session_start();
-          echo $_SESSION['username'];
+        <?php include('session.php');
+          // includes session start from session.php
         ?>
         </ul>
       </nav>

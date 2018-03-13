@@ -6,19 +6,8 @@
   <link href="register.css" rel="stylesheet">
 </head>
 <body class="text-center">
-  <!--<script>
-  function validate() {
-    var password1 = document.getElementById('password1').value;
-    var password2 = document.getElementById('password2').value;
-    if(password1 == password2) {
-      //valid password
-    } else {
-      //invalid password
-    }
-  }
-</script>-->
   <div class="header">Register for UVA Textbook Exchange<img src="register.png">
-</div>
+  </div>
 
   <!--Registration form-->
   <form action="register.php" method="post">
@@ -61,6 +50,9 @@
       <p>Lauren Phan and Aditi Takle © 2018</p>
     </section>
   </footer>
-
+      <!-- Include JQuery from the Google CDN for Bebas Font--> 
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+      <!-- Include the RenderedFont rendering engine (using the #free account key) -->
+      <script type="text/javascript"  src='http://cdn.renderedfont.com/js/renderedfont-0.8.min.js#free'></script>
 </body>
 </html>

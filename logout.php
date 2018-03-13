@@ -7,8 +7,9 @@
   <link href="signin.css" rel="stylesheet">
 </head>
 <body>
-  <?php
+  <?php include('session.php');
       session_start();
+      unset($_SESSION["username"]);
       session_destroy();
    ?>
    <h3>Thanks for using UVA Textbook Exchange!</h3>
