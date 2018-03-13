@@ -12,15 +12,19 @@
   <header>
     <nav>
       <ul>
-        <a class="navbar" id="logout" href="index.html"><img src="logout.png"></a></button>
+        <a class="navbar" id="logout" href="logout.php"><img src="logout.png"></a>
         <!--<div class="dropdown-menu">-->
-        <a class="navbar" id="user"><img src="user.png"></a></button>
+        <a class="navbar" id="user"><img src="user.png"></a>
           <!--<div id="dropdown" class="dropdown-links">
             <a href="#">Link 1</a>
             <a href="#">Link 2</a>
             <a href="#">Link 3</a>
           </div>-
         </div>-->
+        <?php
+          session_start();
+          echo $_SESSION['username'];
+        ?>
         </ul>
       </nav>
     </header>

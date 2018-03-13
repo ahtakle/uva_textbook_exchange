@@ -9,17 +9,19 @@
 </head>
 <body class="text-center">
   <header>
-    <img src="book-and-pen.png" height="200px" width="200px">
+    <img src="book-and-pen.png" height="150px" width="150px">
   </header>
   <h1>Welcome to UVA Textbook Exchange!</h1>
   <h3>Begin by logging in.</h3>
-  <form class="form-signin">
+  <!--temporarily, button is set to open post_textbook after login.
+  should eventually change to list of textbooks-->
+  <form class="form-signin" method="post" action="post_textbook.php">
     <table>
       <tr>
         <td>
           <div class="input-boxes">
             <span class="input-icon"></span>
-          <input type="text" id="user" placeholder="Username" name="username" required />
+          <input type="text" id="user" name="username" placeholder="Username" required />
          </div>
          </td>
       </tr>
@@ -27,20 +29,24 @@
         <td>
           <div class="input-boxes">
             <span class="input-icon>"></span>
-              <input type="password" placeholder="Password" name="pwd" required />
+              <input type="password" name="password" placeholder="Password" required />
           </div>
         </td>
       </tr>
-  </table>
+    </table>
+    <?php include 'session.php';?>
     <button type="submit" value="Submit" title="Login"><span>Login</span></button>
+
   </form>
 
-  <a href="register.html">Don't have an account? Register here.</a>
   <br/>
 
-  <section id ="tagline" class="tagline">
+
+  <footer>
+    <a href="register.php">Don't have an account? Register here.</a>
     <p>Lauren Phan and Aditi Takle © 2018</p>
-  </section>
+  </footer>
+
 </body>
 
 </html>

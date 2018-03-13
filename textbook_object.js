@@ -35,7 +35,7 @@ function addTextbook() {
     type,
     condition,
     document.getElementById("edition").value,
-    document.getElementById("isbn").value
+    document.getElementById("isbn").value,
     document.getElementById("image").value);
 
 
