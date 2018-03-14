@@ -22,7 +22,9 @@
           </div>-
         </div>-->
         <?php include('session.php');
-          // includes session start from session.php
+          # use of variable expressions
+          $name = $_POST["username"];
+          echo "<h5>Welcome back, $name !</h5>";
         ?>
         </ul>
       </nav>

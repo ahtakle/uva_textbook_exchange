@@ -39,6 +39,7 @@
       $responses = $_POST;
       if(!empty($responses)) {
         if($responses['password1'] != $responses['password2']) {
+            #server-side input validation, error messages
             echo "<p style='color:red'>Passwords don't match. Please enter information again.</p>";
           }
       }
@@ -50,7 +51,7 @@
       <p>Lauren Phan and Aditi Takle © 2018</p>
     </section>
   </footer>
-      <!-- Include JQuery from the Google CDN for Bebas Font--> 
+      <!-- Include JQuery from the Google CDN for Bebas Font-->
       <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
       <!-- Include the RenderedFont rendering engine (using the #free account key) -->
       <script type="text/javascript"  src='http://cdn.renderedfont.com/js/renderedfont-0.8.min.js#free'></script>
