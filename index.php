@@ -34,14 +34,11 @@
         </td>
       </tr>
     </table>
-    <?php include 'session.php';?>
     <button type="submit" value="Submit" title="Login"><span>Login</span></button>
 
   </form>
 
   <br/>
-
-
   <footer>
     <a href="register.php">Don't have an account? Register here.</a>
     <p>Lauren Phan and Aditi Takle © 2018</p>

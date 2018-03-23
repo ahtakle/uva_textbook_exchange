@@ -4,60 +4,100 @@ body {
   opacity:0.7;
   display:block;
   margin:0;
+  padding:0;
   text-align:center;
   font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 
 }
-h1 {
-  font-size:250%;
-  color:#01163a;
+body a {
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	-ms-transition: 0.5s all;
+	text-decoration: none;
 }
-nav {
-  overflow:hidden;
-  background-color:#1F57AE;
-  color:white;
-  width:100%;
-  padding:0px;
+body a:hover {
+	text-decoration: none;
 }
-ul {
-  padding:0px;
-  margin:0px;
+body a:focus, a:hover {
+	text-decoration: none;
 }
-
-nav .navbar {
+#navbar {
   margin:0;
-  float:right;
-  text-align:center;
-  font-size:17px;
-  padding: 10px;
-  height:100%;
+  position:fixed;
+  width:100%;
 }
-#logout img {
-  height:50%;
-  width:50%;
-}
-#logout {
-  width:3%;
-}
-#user img {
-  height:50%;
-  width:50%;
-}
-#user {
-  width:3%;
-}
-.card {
-    /* Add shadows to create the "card" effect */
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,1.0);
-    transition: 0.3s;
+.navbar-nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:#1F57AE;
 }
 
-/* On mouse-over, add a deeper shadow */
-.card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,1.0);
+.navbar-left {
+    float: left;
 }
-
-/* Add some padding inside the card container */
-.container {
-    padding: 1px 10px;
+.navbar-nav li a {
+    display:block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.navbar-nav li a:hover {
+    background-color: #111;
+}
+.navbar-right {
+    float: right;
+}
+.navbar-right a {
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+#active {
+  background-color: #111;
+}
+#price-label {
+  float:left;
+}
+h1 {
+  color:#01163a;
+  margin: 0;
+  padding: 0;
+  font-family: 'Alegreya Sans', sans-serif;
+}
+.heading {
+    text-align: center;
+	    margin-bottom: 25px;
+		letter-spacing: 1px;
+}
+.heading h1 {
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-weight: 500;
+	font-size: 50px;
+}
+.heading h2 {
+    font-weight: 400;
+}
+.heading p {
+    font-size: 16px;
+}
+input[type="button"], input[type="submit"] {
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	-ms-transition: 0.5s all;
+}
+.navbar-right img {
+  height:400%;
+  width:200%;
+}
+#logout-link {
+  width:3%;
 }

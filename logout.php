@@ -9,11 +9,12 @@
 <body>
   <?php include('session.php');
       session_start();
-      unset($_SESSION["username"]);
       session_destroy();
    ?>
-   <h3>Thanks for using UVA Textbook Exchange!</h3>
+   <h1>Thanks for using UVA Textbook Exchange!</h1>
 
-   <a href="index.php">Login Here</a>
+   <img src="goodbye.png" height=300px width=400px>
+
+   <a href="index.php">Login Again</a>
 </body>
 </html>

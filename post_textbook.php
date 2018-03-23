@@ -1,111 +1,157 @@
+
+<!--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+-->
 <!DOCTYPE html>
-<!--post_textbook.html: consists of a simple form to collect textbook information-->
-<html>
+<html lang="en">
 <head>
-  <meta name="author" content="Lauren Phan and Aditi Takle">
-  <meta name="description" content="UVA Textbook Exchange">
-  <link href="postbook.css" rel="stylesheet">
+	<!-- Meta tags -->
+	<title>General Application Form a Flat Responsive Widget Template :: w3layouts</title>
+	<meta name="keywords" content="UVA Textbook Exchange, Textbook, Post a Textbook" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- stylesheets -->
+	<link rel="stylesheet" href="postbook.css" type="text/css" media="all">
+
+	<!-- google fonts  -->
+	<link href="//fonts.googleapis.com/css?family=Alegreya+Sans:100,100i,300,300i,400,400i,500,500i,700,700i,800,800i,900,900i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+
 </head>
 <body>
-
-  <!--navbar with logout, user options-->
   <header>
-    <nav>
-      <ul>
-        <a class="navbar" id="logout" href="logout.php"><img src="logout.png"></a>
-        <!--<div class="dropdown-menu">-->
-        <a class="navbar" id="user"><img src="user.png"></a>
-          <!--<div id="dropdown" class="dropdown-links">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-          </div>-
-        </div>-->
-        <?php include('session.php');
-          # use of variable expressions
-          $name = $_POST["username"];
-          echo "<h5>Welcome back, $name !</h5>";
-        ?>
-        </ul>
-      </nav>
-    </header>
-
-      <!--Form w/ textbook details-->
-      <section>
-        <h1>Post a textbook for sale!</h1>
-        <form>
-          <table>
-            <tr>
-              <td>Textbook Name:</td>
-              <td><input type="text" id="name" autofocus required /></td>
-            </tr>
-            <tr>
-              <td>Author:</td>
-              <td><input type="text" id="author" required /></td>
-            </tr>
-            <tr>
-              <td>Course Name:</td>
-              <td><input type="text" id="coursename" required /></td>
-            </tr>
-            <tr>
-              <td>Professor (optional):</td>
-              <td><input type="text" id="professor" /></td>
-            </tr>
-            <tr>
-              <td>Price (optional):</td>
-              <td><input type="text" id="price" required /></td>
-            </tr>
-            <tr>
-              <td>Edition:</td>
-              <td><input type="text" id="edition" required /></td>
-            </tr>
-            <tr>
-              <td>Type:</td>
-              <td><select id="type">
-                <option value="hardcover">Hard Cover</option>
-                <option value="paperback">Paper Back</option>
-                <option value="loose-leaf">Loose-Leaf</option>
-              </select></td>
-            </tr>
-            <tr>
-              <td>Condition:</td>
-              <td><select id="condition">
-                <option value="new">New</option>
-                <option value ="excellent">Excellent</option>
-                <option value="fair">Fair</option>
-                <option value="poor">Poor</option>
-              </select></td>
-            </tr>
-            <tr>
-              <td>ISBN:</td>
-              <td><input type="text" id="isbn" required /></td>
-            </tr>
-            <tr>
-              <td>Upload Image:</td>
-              <td><input type="file" id="image"/></td>
-            </tr>
-          </table>
-          <button class="posttextbook" type="posttextbook" value="posttextbook" title="Login" onclick="addTextbook()"><span>Post Textbook</span></button>
-        </form>
-      </section>
-
-      <script type="text/javascript" src="textbook_object.js"></script>
-      <!--scsript to show dropdown menu-->
-      <!-- to implement later
-      <script type="text/javscript">
-        document.getElementById("dropdown").classList.toggle("show");
-        window.onclick = function(event) {
-          if (!event.target.matches(#user)) {
-            var dropdowns = document.getElementsByClassName("dropwdown-links");
-            var i = for (i = 0: i < dropdowns.length; i++) {
-              var openDropdown = dropdowns[i];
-              if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
-              }
-          }
-        }
-      }
-    -->
-      </script>
-    </body>
-    </html>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="nav-container">
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="navbar-nav">
+            <li class="navbar-left"><a href="list_textbooks.php">Buy</a></li>
+            <li class="navbar-left" id="active"><a href="post_textbook.php">Sell</a></li>
+            <li class="navbar-left"><a href="#contact">Contact</a></li>
+            <li class="navbar-right"><a href="logout.php">Logout</a></li>
+            <li class="navbar-right"><a href="#">
+                <?php
+                  session_start();
+                  #use of variable expressions
+                  if(isset($_POST["username"])) {
+                    $_SESSION["username"] = $_POST["username"];
+                }
+                  echo $_SESSION["username"];
+                ?>
+              </a>
+            </li>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+  </header>
+  <br/><br/><br/>
+	<div class="heading">
+		<h1>Sell a Textbook</h1>
+		<div class="container">
+			<div class="heading">
+				<h2>Posting Form</h2>
+			</div>
+			<div class="agile-form">
+				<form action="#" method="post">
+					<ul class="field-list">
+						<li class="name">
+							<label class="form-label"> Name <span class="form-required"> * </span></label>
+							<div class="form-input">
+									<input type="text" name="name" placeholder="Textbook Name" required>
+							</div>
+						</li>
+						<li>
+							<label class="form-label"> Author <span class="form-required"> * </span></label>
+							<div class="form-input">
+								<input type="text" name="author" placeholder="Author Name" required>
+							</div>
+						</li>
+						<li>
+							<label class="form-label"> Price </label>
+							<div class="form-input">
+								<input type="text" name="price" placeholder="Price (i.e. 100.00)" optional>
+							</div>
+						</li>
+            <li>
+              <label class="form-label" id="price-label"> Price Negotiable </label>
+              <div class="form-input">
+                <input type="radio" name="negotiable" value="Yes">Yes
+                <input type="radio" name="negotiable" value="No">No
+              </div>
+            </li>
+            <li>
+							<label class="form-label"> Edition </span></label>
+							<div class="form-input">
+								<input type="text" name="edition" placeholder="Edition" optional>
+							</div>
+						</li>
+						<li>
+							<label class="form-label"> Condition <span class="form-required"> * </span></label>
+							<div class="form-input">
+								<select class="form-dropdown" name="condition" required>
+									<option value="">Condition</option>
+									<option value="New"> New </option>
+									<option value="Excellent"> Excellent </option>
+									<option value="Good"> Good </option>
+                  <option value="Fair"> Fair </option>
+                  <option value="Poor"> Poor </option>
+								</select>
+							</div>
+						</li>
+						<li>
+							<label class="form-label">Type <span class="form-required"> * </span></label>
+							<div class="form-input">
+								<select class="form-dropdown" name="citizen" required>
+									<option value="">Select Type</option>
+									<option value="hardcover"> Hard Cover </option>
+									<option value="paperback"> Paper Back</option>
+									<option value="looseleaf"> Loose Leaf </option>
+                  <option value="ebook"> E-Book Access </option>
+								</select>
+							</div>
+						</li>
+            <li>
+              <label class="form-label"> Upload Image </label>
+              <div class="form-input">
+                <input type="file" name="image">
+              </div>
+            </li>
+						<li>
+							<label class="form-label">
+							   Course Info
+							   <span class="form-required"> * </span>
+							</label>
+							<div class="form-input add">
+								<span class="form-sub-label">
+									<input type="text" name="mnemonic" placeholder="Department (i.e. CS) * " required>
+								</span>
+								<span class="form-sub-label">
+									<input type="text" name="number" placeholder="Course Number (i.e. 4640) *" required>
+								</span>
+								<span class="form-sub-label">
+									<input type="text" name="professor" placeholder="Professor Last Name *" required>
+								</span>
+								<span class="form-sub-label">
+									<input type="text" name="section" placeholder="Section (i.e. 2:00-3:15)" optional>
+								</span>
+							</div>
+						</li>
+					</ul>
+					<div class="submit_btn">
+						<input type="submit" value="Submit">
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="copyright">
+			<p>© 2018 General Application Form. All rights reserved | Design by <a href="www.w3layouts.com">W3layouts</a></p>
+		</div>
+	</div>
+</body>
+</html>
