@@ -32,7 +32,7 @@
             <li class="navbar-left"><a href="list_textbooks.php">Buy</a></li>
             <li class="navbar-left" id="active"><a href="post_textbook.php">Sell</a></li>
             <li class="navbar-left"><a href="#contact">Contact</a></li>
-            <li class="navbar-right"><a href="logout.php">Logout</a></li>
+            <li class="navbar-right"><a href="http://localhost:8080/uva_textbook_exchange/LogoutServlet">Logout</a></li>
             <li class="navbar-right"><a href="#">
                 <?php
                   session_start();

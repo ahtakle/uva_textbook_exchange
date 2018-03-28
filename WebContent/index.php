@@ -15,7 +15,7 @@
   <h3>Begin by logging in.</h3>
   <!--temporarily, button is set to open post_textbook after login.
   should eventually change to list of textbooks-->
-  <form class="form-signin" method="post" action="post_textbook.php">
+  <form class="form-signin" method="post" action="http://localhost:8080/uva_textbook_exchange/LoginServlet">
     <table>
       <tr>
         <td>

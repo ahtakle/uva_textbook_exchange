@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<!--index.html: consists of login page for textbook exchange application-->
+<head>
+  <meta name="author" content="Lauren Phan and Aditi Takle">
+  <meta name="description" content="UVA Textbook Exchange">
+
+  <link href="contact.css" rel="stylesheet">
+</head>
+<body>
+  <h1>We'd love to hear from you!</h1>
+  <p>testing 123</p>
+  <p>testing</p> 
+  <form action="http://localhost:8080/uva_textbook_exchange/ContactServlet" method="post">
+    <h3>Reason for contacting us</h3>
+    <select name="type" id="type">
+      <option value="question">Question</option>
+      <option value="feedback">Feedback</option>
+      <option value="other">Other</option>
+    </select>
+   </br>
+   <input class="message" type=text name="message"/>
+   <input type="submit" name="submitButton" value="Submit"/>
+
+  </form>
+</body>
+</html>
