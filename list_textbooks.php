@@ -6,6 +6,9 @@
       <link rel="stylesheet" href="textbooks.css">
     </head>
     <body>
+      <?php
+      $textbooks=simplexml_load_file("textbooks.xml") or die("Error: Cannot create object");
+      ?>
       <header>
         <!-- Fixed navbar -->
         <nav class="navbar navbar-default navbar-fixed-top">
@@ -35,9 +38,14 @@
       <div class="heading"><h1>Buy a Textbook</h1></div>
         <img src="tb.jpg" alt="Avatar" style="width:23%; height:40%;">
         <div class="container">
-          <h3><b>WORLD HISTORY - Ellis Esler</b></h3>
-          <h4><b>$90</b></h4>
-          <p>Condition: Good</p>
+          <h3><b><?php echo $textbooks->book[0]->name . " - " . $textbooks->book[0]->author;  ?></b></h3>
+          <p>Edition: <?php echo $textbooks->book[0]->edition; ?></p>
+        </div>
+
+        <img src="tb.jpg" alt="Avatar" style="width:23%; height:40%;">
+        <div class="container">
+          <h3><b><?php echo $textbooks->book[1]->name . " - " . $textbooks->book[1]->author;  ?></b></h3>
+          <p>Edition: <?php echo $textbooks->book[1]->edition; ?></p>
         </div>
       <script type="text/javascript" src="textbook_object.js"></script>
     </body>

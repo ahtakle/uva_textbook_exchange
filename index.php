@@ -41,8 +41,24 @@
   <br/>
   <footer>
     <a href="register.php">Don't have an account? Register here.</a>
+    <div id="about">
+    <button type="button" onclick="loadDoc()">About Us</button>
+  </div>
     <p>Lauren Phan and Aditi Takle © 2018</p>
   </footer>
+
+  <script>
+  function loadDoc() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("about").innerHTML = this.responseText;
+      }
+    };
+    xhttp.open("GET", "about_us.txt", true);
+    xhttp.send();
+  }
+  </script>
 
 </body>
 

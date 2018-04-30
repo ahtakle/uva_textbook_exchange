@@ -1,0 +1,6 @@
+UVA Textbook Exchange is an accessible and VERY well-designed web application allowing students to tit for tat their textbooks among other undergraduates.
+
+"This website is so good, it doesn't run on just one service. You need to run it on Apache AND Tomcat to get it to function."
+- Aditi Takle (2018), co-founder of UVA Textbook exchange
+"Who needs one backend language when you can have five?"
+- Lauren Takle (2018), co-founder of UVA Textbook exchange

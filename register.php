@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <head>
   <meta name="author" content="Lauren Phan and Aditi Takle">
   <meta name="description" content="UVA Textbook Exchange">
@@ -10,19 +11,21 @@
   </div>
 
   <!--Registration form-->
-  <form action="register.php" method="post">
+  <form ng-app="myApp" ng-controller="myCtrl" name="myForm" action="register_confirm.html" method="post">
     <table>
       <tr>
         <td>First Name:</td>
-        <td><input type="text" name="fname" required value="<?php if(!empty($_POST)){ echo($_POST['fname']); } ?>"/></td>
+        <td><input ng-model="fname" type="text" name="fname" required value="<?php if(!empty($_POST)){ echo($_POST['fname']); } ?>"/></td>
       </tr>
       <tr>
         <td>Last Name:</td>
-        <td><input type="text" name="lname" required value="<?php if(!empty($_POST)){ echo($_POST['lname']); } ?>"/></td>
+        <td><input ng-model="lname" type="text" name="lname" required value="<?php if(!empty($_POST)){ echo($_POST['lname']); } ?>"/></td>
       </tr>
       <tr>
         <td>E-mail:</td>
-        <td><input type="text" id="email" name="email" required value="<?php if(!empty($_POST)){ echo($_POST['email']); } ?>"/></td>
+        <td><input ng-model="text" type="email" id="email" name="email" required value="<?php if(!empty($_POST)){ echo($_POST['email']); } ?>"/>
+          <span ng-show="myForm.email.$error.email">Not a valid e-mail address</span>
+        </td>
       </tr>
       <tr>
         <td>Password:</td>
@@ -35,6 +38,8 @@
     </table>
 
     <button value="Register" title="Register"><span>Register</span></button>
+
+    <p>{{fname + " " + lname}}</p>
     <?php
       $responses = $_POST;
       if(!empty($responses)) {
@@ -51,6 +56,46 @@
       <p>Lauren Phan and Aditi Takle © 2018</p>
     </section>
   </footer>
+  <script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+      $scope.fname = "First name";
+      $scope.lname = "Last name";
+    });
+
+    myApp.controller("myCtrl", function ($scope, $http)
+      {
+
+         $scope.getPlace = function()
+         {
+            if ($scope.zip !== undefined)
+            {
+               /* var promise = $http.get("http://localhost/cs4640s18/angularjs-backend/popcorn-get-request/getCityState.php?zip=" + $scope.zip); */
+               var promise = $http.get("getCityState.php?zip=" + $scope.zip);
+               promise.success(onSuccess);
+               promise.error(onError);
+            }
+            else
+            {
+        	   $scope.data = "undefined";
+            }
+         }
+     
+      });
+
+    app.controller('myCtrl', function($scope, $http) {
+      $http({
+        method : "GET",
+        url : "register_confirm.html?fname=" + $scope.fname + "&lname=" + $scope.lname
+       }).then(function mySuccess(response) {
+         var promise = $http.get("getCityState.php?zip=" + $scope.zip);
+              promise.success(onSuccess);
+              promise.error(onError);
+        }, function myError(response) {
+      });
+    });
+
+  </script>
       <!-- Include JQuery from the Google CDN for Bebas Font-->
       <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
       <!-- Include the RenderedFont rendering engine (using the #free account key) -->

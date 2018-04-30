@@ -21,12 +21,13 @@
 	<!-- google fonts  -->
 	<link href="//fonts.googleapis.com/css?family=Alegreya+Sans:100,100i,300,300i,400,400i,500,500i,700,700i,800,800i,900,900i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
 
+	    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
 </head>
-<body>
+<body ng-app="myApp">
   <header>
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="nav-container">
+      <div class="nav-container" ng-controller="myController">
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="navbar-nav">
             <li class="navbar-left"><a href="list_textbooks.php">Buy</a></li>
@@ -70,6 +71,13 @@
 							<label class="form-label"> Author <span class="form-required"> * </span></label>
 							<div class="form-input">
 								<input type="text" name="author" placeholder="Author Name" required>
+							</div>
+						</li>
+						<li>
+							<label class="form-label"> ISBN </label>
+							<div class="form-input">
+								<input type="text" name="isbn" placeholder="ISBN" optional
+								ng-model="isbn" ng-blur="getISBNInfo()">
 							</div>
 						</li>
 						<li>
@@ -147,11 +155,48 @@
 						<input type="submit" value="Submit">
 					</div>
 				</form>
+					Response data: {{data}}
 			</div>
 		</div>
 		<div class="copyright">
 			<p>© 2018 General Application Form. All rights reserved | Design by <a href="www.w3layouts.com">W3layouts</a></p>
 		</div>
 	</div>
+
+	<script>
+	      var myApp = angular.module('myApp', []);
+
+	      myApp.controller("myController", function ($scope, $http)
+	      {
+	         var onSuccess = function (data, status, headers, config)
+	         {
+	            $scope.data = data;
+	         };
+
+	         var onError = function (data, status, headers, config)
+	         {
+	            $scope.error = status;
+	         };
+
+	         $scope.getISBNInfo = function()
+	         {
+						 console.log("getISBNInfo");
+	            if ($scope.isbn !== undefined)
+	            {
+	               /* var promise = $http.get("http://localhost/cs4640s18/angularjs-backend/popcorn-get-request/getCityState.php?zip=" + $scope.zip); */
+	               var promise = $http.get("isbn.php?isbn=" + $scope.isbn);
+								 console.log(promise);
+	               promise.success(onSuccess);
+	               promise.error(onError);
+	            }
+	            else
+	            {
+	        	   $scope.data = "undefined";
+	            }
+	         }
+
+	      });
+	    </script>
+
 </body>
 </html>
